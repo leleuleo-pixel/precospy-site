@@ -3,40 +3,208 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <img src="logo.png" alt="Logo PreçoSpy" width="120" />
-  <title>PreçoSpy — Em construção</title>
+  <title>Pre&ccedil;oSpy | Monitoramento inteligente de ofertas</title>
+  <meta name="description" content="Pre&ccedil;oSpy &eacute; o app que monitora pre&ccedil;os em tempo real e envia alertas personalizados para voc&ecirc; n&atilde;o perder nenhuma oferta." />
   <style>
-    body {
-        background: linear-gradient(135deg, #008B8B, #00A3A3);
-        color: white;
-        font-family: 'Segoe UI', sans-serif;
-        text-align: center;
-        height: 100vh;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-}
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
+    :root {
+      color-scheme: dark;
+      --primary: #00bfa6;
+      --primary-dark: #008c7d;
+      --text: #f5f5f5;
+      --muted: #b4f2e1;
+      --card: rgba(0, 0, 0, 0.35);
     }
-    p {
-      font-size: 1.2rem;
-      opacity: 0.9;
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Segoe UI", "Inter", sans-serif;
+      background: radial-gradient(circle at top, #022332 0%, #01070e 35%, #000 100%);
+      color: var(--text);
+    }
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 2rem;
+    }
+    header {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+      align-items: flex-start;
+      text-align: left;
+    }
+    header img {
+      width: 140px;
+      height: auto;
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      margin: 0;
+      line-height: 1.1;
+      color: #fff;
+    }
+    header p {
+      font-size: 1.15rem;
+      max-width: 520px;
+      color: rgba(255, 255, 255, 0.85);
+      margin: 0;
+    }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-top: 0.5rem;
+    }
+    .cta-row a,
+    .cta-row button {
+      border: none;
+      border-radius: 999px;
+      padding: 0.95rem 1.8rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .cta-primary {
+      background: linear-gradient(120deg, var(--primary), #00ffd4);
+      color: #03221c;
+      box-shadow: 0 15px 45px rgba(0, 255, 212, 0.25);
+    }
+    .cta-secondary {
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: #fff;
+      background: transparent;
+    }
+    section {
+      margin-top: 3rem;
+      padding: 2rem;
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 24px;
+      backdrop-filter: blur(18px);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      padding: 0;
+      background: none;
+      box-shadow: none;
+      border: none;
+      margin-top: 2.5rem;
+    }
+    .feature-card {
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      padding: 1.5rem;
+    }
+    .feature-card h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 1.15rem;
+    }
+    .feature-card p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+    .contact {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .contact a {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .contact a:hover {
+      text-decoration: underline;
     }
     footer {
-      position: absolute;
-      bottom: 20px;
+      margin-top: 3rem;
+      padding: 1.2rem 0 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-between;
       font-size: 0.9rem;
-      opacity: 0.7;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    footer a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 640px) {
+      header {
+        align-items: flex-start;
+      }
+      section {
+        padding: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>🚧 PreçoSpy</h1>
-  <p>Estamos preparando algo incrível para você.<br>Volte em breve!</p>
-  <footer>© 2025 PreçoSpy. Todos os direitos reservados.</footer>
+  <main class="page">
+    <header>
+      <img src="logo.png" alt="Logo Pre&ccedil;oSpy" />
+      <span class="eyebrow">V0 em constru&ccedil;&atilde;o</span>
+      <h1>O aplicativo que vigia os pre&ccedil;os para voc&ecirc; comprar no momento certo.</h1>
+      <p>Receba alertas em tempo real, acompanhe hist&oacute;ricos de cada produto e aproveite recomenda&ccedil;&otilde;es baseadas no seu perfil. Pre&ccedil;oSpy &eacute; o seu radar de ofertas inteligentes.</p>
+      <div class="cta-row">
+        <a class="cta-primary" href="mailto:contato@precospy.com.br?subject=Quero%20testar%20o%20Pre%C3%A7oSpy">Participar dos testes</a>
+        <a class="cta-secondary" href="privacy.html">Pol&iacute;tica de privacidade</a>
+      </div>
+    </header>
+
+    <section aria-labelledby="beneficios">
+      <h2 id="beneficios">Como o Pre&ccedil;oSpy ajuda voc&ecirc;</h2>
+      <div class="features">
+        <article class="feature-card">
+          <h3>Alertas personaliz&aacute;veis</h3>
+          <p>Defina o valor ideal e receba uma notifica&ccedil;&atilde;o assim que encontrar a oferta que combina com seu bolso.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Hist&oacute;rico transparente</h3>
+          <p>Veja como o pre&ccedil;o oscilou nos &uacute;ltimos meses para decidir com dados se vale esperar ou comprar.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Rastreamento multi-loja</h3>
+          <p>Cubra marketplaces, varejistas e sellers independentes em um painel &uacute;nico e organizado.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Insights inteligentes</h3>
+          <p>Receba sugest&otilde;es de economia baseadas no seu perfil e nas tend&ecirc;ncias de mercado.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact" aria-labelledby="contato">
+      <h2 id="contato">Fale com a gente</h2>
+      <p>Quer divulgar o Pre&ccedil;oSpy, propor parcerias ou liberar acesso antecipado para seu time? Escreva para <a href="mailto:contato@precospy.com.br">contato@precospy.com.br</a> e respondemos em at&eacute; 1 dia &uacute;til.</p>
+      <p>Estamos construindo esta V0 com o apoio da comunidade. Toda sugest&atilde;o &eacute; bem-vinda!</p>
+    </section>
+
+    <footer>
+      <span>&copy; 2025 Pre&ccedil;oSpy. Todos os direitos reservados.</span>
+      <a href="privacy.html">Pol&iacute;tica de privacidade</a>
+    </footer>
+  </main>
 </body>
 </html>
